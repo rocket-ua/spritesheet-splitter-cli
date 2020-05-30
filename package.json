@@ -1,0 +1,50 @@
+{
+  "name": "spritesheet-splitter-cli",
+  "author": "Vadim Postnikov",
+  "license": "MIT",
+  "version": "1.0.3",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "spritesheet-splitter": "./bin/app.js"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.dev.js",
+    "publish": "webpack --config webpack.prod.js",
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocket-ua/spritesheet-splitter-cli.git"
+  },
+  "keywords": [
+    "sprite",
+    "spritesheet",
+    "sprite sheet",
+    "splitter"
+  ],
+  "bugs": {
+    "url": "https://github.com/rocket-ua/spritesheet-splitter-cli/issues"
+  },
+  "homepage": "https://github.com/rocket-ua/spritesheet-splitter-cli#readme",
+  "dependencies": {
+    "canvas": "^2.5.0",
+    "filereader": "^0.10.3",
+    "xhr2": "^0.2.0",
+    "xml2js": "^0.4.23",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "node-loader": "^0.6.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2",
+    "webpack-stream": "^5.2.1"
+  }
+}
