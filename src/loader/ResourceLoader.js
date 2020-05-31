@@ -70,6 +70,9 @@ export default new class ResourceLoader extends EventEmitter {
             case '.jpeg':
                 type = 'image/jpeg';
                 break;
+            case '.atlas':
+                type = 'application/atlas';
+                break
         }
         return {
             buffer: data,
@@ -97,7 +100,8 @@ export default new class ResourceLoader extends EventEmitter {
     fileLoadingComplete(data) {
         let name = path.basename(data.responseURL);
         ResourcesManager.addResource(name, data.response);
-        if (data.response.type === 'application/json') {
+        if (data.response.type === 'application/json' ||
+            data.response.type === 'application/atlas') {
             let resource = ResourcesManager.getData(name);
             resource.on('loaded', () => {
                 resource.textures.forEach((textureData) => {

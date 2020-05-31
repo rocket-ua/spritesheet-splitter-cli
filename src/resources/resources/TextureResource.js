@@ -1,6 +1,6 @@
 import Resource from "../Resource";
 import FileReader from "filereader";
-const {Image} = require('canvas');
+import {Image} from "canvas";
 
 export default class TextureResource extends Resource {
     constructor(name, srcData, data) {

@@ -2,6 +2,7 @@ import TextureResource from "./resources/TextureResource";
 import JSONResource from "./resources/JSONResource";
 import SpriteSheetResource from "./resources/SpriteSheetResource";
 import BitmapFontResource from "./resources/BitmapFontResource";
+import AtlasResource from "./resources/AtlasResource";
 
 export default new class ResourcesManager {
     constructor() {
@@ -11,6 +12,7 @@ export default new class ResourcesManager {
             'image/png': {class: TextureResource, type: 2},
             'application/json': {class: JSONResource, type: 1},
             'text/xml': {class: BitmapFontResource, type: 1},
+            'application/atlas': {class: AtlasResource, type: 1},
         }
 
         this._textures = {};
