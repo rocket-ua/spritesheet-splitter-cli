@@ -2,7 +2,7 @@
   "name": "spritesheet-splitter-cli",
   "author": "Vadim Postnikov",
   "license": "MIT",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "app.js",
   "bin": {
