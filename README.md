@@ -6,10 +6,10 @@ ___
 Supported local files and can download files use http or https.  
 Supported json data files formats:
 <ul>  
-<li><span style="color:#00ff00">json - supported</span></li>  
-<li><span style="color:#ff0000">atlas - in development</span></li>  
-<li><span style="color:#ff0000">xml - in development</span></li>  
-<li><span style="color:#ff0000">xml bitmap font - in development</span></li> 
+<li>json - supported</li>  
+<li>atlas - supported</li>  
+<li>xml - in development</li>  
+<li>xml bitmap font - in development</li> 
 </ul>  
 
 ## Parameters

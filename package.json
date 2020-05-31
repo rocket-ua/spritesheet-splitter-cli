@@ -2,7 +2,7 @@
   "name": "spritesheet-splitter-cli",
   "author": "Vadim Postnikov",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "app.js",
   "bin": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.dev.js",
-    "publish": "webpack --config webpack.prod.js",
+    "publish": "webpack --config webpack.prod.js"
   },
   "files": [
     "bin/",

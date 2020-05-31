@@ -36,7 +36,7 @@ export default new class Exporter {
     }
 
     _exportSprites(spriteSheetData, spriteSheetName) {
-        console.log(`[Exporter] Export sprite sheet ${spriteSheetName}`)
+        console.log(`[Exporter] Export sprite sheet ${spriteSheetName}`);
         for (let param in spriteSheetData) {
             if (spriteSheetData.hasOwnProperty(param)) {
                 let exportData = spriteSheetData[param];

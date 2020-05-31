@@ -10,9 +10,14 @@ export default new class ResourcesManager {
             'image/jpg': {class: TextureResource, type: 2},
             'image/jpeg': {class: TextureResource, type: 2},
             'image/png': {class: TextureResource, type: 2},
+
             'application/json': {class: JSONResource, type: 1},
+
             'text/xml': {class: BitmapFontResource, type: 1},
+
             'application/atlas': {class: AtlasResource, type: 1},
+            'application/octet-stream': {class: AtlasResource, type: 1},
+            '.atlas': {class: AtlasResource, type: 1}
         }
 
         this._textures = {};
@@ -68,7 +73,7 @@ export default new class ResourcesManager {
     }
 
     getSrcResourceType(data) {
-        if (data.type) {
+        if (data.type && data.type !== '') {
             return data.type;
         } else if (data.name) {
             let index = data.name.lastIndexOf('.');
