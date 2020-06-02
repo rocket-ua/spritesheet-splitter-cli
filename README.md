@@ -6,11 +6,12 @@ ___
 Supported local files and can download files use http or https.  
 Supported json data files formats:
 <ul>  
-<li>json - supported</li>  
+<li>JSON (Array) - supported</li>  
+<li>JSON (Hash) - supported</li>  
 <li>atlas - supported</li>  
-<li>xml - in development</li>  
-<li>xml bitmap font - in development</li> 
 </ul>  
+  
+#### More data formats and file types coming soon.  
 
 ## Parameters
 <ul>  

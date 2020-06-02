@@ -15,10 +15,9 @@ export default class JSONResource extends DataResource {
                 }
             ];
 
-            for (let spriteName in this.data.frames) {
-                if (this.data.frames.hasOwnProperty(spriteName)) {
-                    let spriteSrcData = this.data.frames[spriteName];
-                    this._sprites[spriteName] = {
+            if (Array.isArray(this.data.frames)) {
+                this.data.frames.forEach((spriteSrcData) => {
+                    this._sprites[spriteSrcData.filename] = {
                         frame: spriteSrcData.frame,
                         rotated: spriteSrcData.rotated,
                         trimmed: spriteSrcData.trimmed,
@@ -30,6 +29,25 @@ export default class JSONResource extends DataResource {
                         },
                         rotation: spriteSrcData.rotated ? -90 : 0,
                         textureName: this.data.meta.image
+                    }
+                });
+            } else {
+                for (let spriteName in this.data.frames) {
+                    if (this.data.frames.hasOwnProperty(spriteName)) {
+                        let spriteSrcData = this.data.frames[spriteName];
+                        this._sprites[spriteName] = {
+                            frame: spriteSrcData.frame,
+                            rotated: spriteSrcData.rotated,
+                            trimmed: spriteSrcData.trimmed,
+                            spriteSourceSize: spriteSrcData.spriteSourceSize,
+                            sourceSize: spriteSrcData.sourceSize,
+                            scale: {
+                                x: +this.data.meta.scale,
+                                y: +this.data.meta.scale
+                            },
+                            rotation: spriteSrcData.rotated ? -90 : 0,
+                            textureName: this.data.meta.image
+                        }
                     }
                 }
             }
