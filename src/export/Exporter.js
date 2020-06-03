@@ -47,7 +47,7 @@ export default new class Exporter {
                 let baseDirPath = path.resolve(process.cwd(), argv.out, spriteSheetName);
                 fs.mkdir(path.resolve(baseDirPath, dir), { recursive: true }, (err) => {
                     if (err) throw err;
-                    let filePath = path.resolve(baseDirPath, param) + ext;
+                    let filePath = path.resolve(baseDirPath, param.replace(ext, '')) + ext;
                     console.log(`[Exporter] Export file ${filePath}`);
                     fs.writeFile(filePath, this._formatURL(exportData.data), 'base64', (err) => {
                         if (err) throw err;

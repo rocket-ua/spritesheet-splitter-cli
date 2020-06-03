@@ -1,6 +1,4 @@
 import DataResource from "../DataResource";
-import FileReader from "filereader";
-import xml2js from "xml2js";
 
 export default class BitmapFontResource extends DataResource {
     constructor(name, srcData, data) {
@@ -9,9 +7,6 @@ export default class BitmapFontResource extends DataResource {
 
     _parseData() {
         if (this._data) {
-            console.log(JSON.stringify(this._data));
-
-            return;
             this._textures = [];
             let common = this._data.getElementsByTagName('common')[0];
 
@@ -62,17 +57,10 @@ export default class BitmapFontResource extends DataResource {
     _parseSrcData() {
         if (this._srcData) {
             console.log(`[BitmapFontResource] Start prepare data ${this._name}`);
-            this._type = this._srcData.type;
-            let fileReader = new FileReader();
-            fileReader.addEventListener('load', (event) => {
-                xml2js.parseString(event.target.result, (err, result) => {
-                    this.data = result;
-                    this._ready = true;
-                    console.log(`[BitmapFontResource] Prepare data complete ${this._name}`);
-                    this.emit('loaded');
-                })
-            }, false);
-            fileReader.readAsText(this._srcData);
+            this.data = new DOMParser().parseFromString(event.target.result, "application/xml");
+            this._ready = true;
+            console.log(`[BitmapFontResource] Prepare data complete ${this._name}`);
+            this.emit('loaded');
         }
     }
 }

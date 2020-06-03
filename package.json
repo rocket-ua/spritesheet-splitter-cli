@@ -2,7 +2,7 @@
   "name": "spritesheet-splitter-cli",
   "author": "Vadim Postnikov",
   "license": "MIT",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "CLI tools for export sprites from sprite sheet.",
   "main": "app.js",
   "bin": {

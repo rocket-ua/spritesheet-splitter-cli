@@ -57,12 +57,6 @@ export default new class ResourceLoader extends EventEmitter {
         let type = '';
         const {name: baseName, ext: extName} = path.parse(url);
         switch (extName) {
-            case '.json':
-                type = 'application/json';
-                break;
-            case '.xml':
-                type = 'text/xml';
-                break;
             case '.png':
                 type = 'image/png';
                 break;
@@ -70,9 +64,6 @@ export default new class ResourceLoader extends EventEmitter {
             case '.jpeg':
                 type = 'image/jpeg';
                 break;
-            case '.atlas':
-                type = 'application/atlas';
-                break
         }
         return {
             buffer: data,
@@ -99,21 +90,20 @@ export default new class ResourceLoader extends EventEmitter {
 
     fileLoadingComplete(data) {
         let name = path.basename(data.responseURL);
-        ResourcesManager.addResource(name, data.response);
-        let extName = path.extname(data.responseURL);
-        if (data.response.type === 'application/json' ||
-            data.response.type === 'application/atlas' ||
-            extName === '.atlas') {
-            let resource = ResourcesManager.getData(name);
-            resource.on('loaded', () => {
-                resource.textures.forEach((textureData) => {
-                    this.add(path.dirname(data.responseURL) + '/' + textureData.name);
-                });
-                if (!this._inProgress) {
-                    this.load()
-                }
-            });
-        }
+        ResourcesManager.addResource(name, data.response).then((resource) => {
+            switch (resource.type) {
+                case 1:
+                    resource.textures.forEach((textureData) => {
+                        this.add(path.dirname(data.responseURL) + '/' + textureData.name);
+                    });
+                    if (!this._inProgress) {
+                        this.load();
+                    }
+                    break;
+            }
+        }, () => {
+
+        });
     }
 
     get loaderStack() {

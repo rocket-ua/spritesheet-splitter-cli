@@ -8,11 +8,11 @@ export default class SpriteSheetResource extends EventEmitter {
         this._type = 'spriteSheet';
         this._textures = [];
         this._data = {};
+        this._ready = false;
 
         this._promise = new Promise((resolve, reject) => {
             this.on('loaded', resolve);
         });
-        this._ready = false;
 
         this._onDataReady = this._onDataReady.bind(this);
         this._onTexturesReady = this._onTexturesReady.bind(this);
