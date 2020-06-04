@@ -2,7 +2,7 @@
   "name": "spritesheet-splitter-cli",
   "author": "Vadim Postnikov",
   "license": "MIT",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "CLI tools for export sprites from sprite sheet.",
   "main": "app.js",
   "bin": {
@@ -13,7 +13,7 @@
     "publish": "webpack --config webpack.prod.js"
   },
   "files": [
-    "bin/",
+    "bin/app.js",
     "README.md",
     "LICENSE"
   ],
