@@ -40,6 +40,10 @@ Use sprite sheet files downloaded using http or https for split
 ```
 spritesheet-splitter --data http://testSite.com/spritesheet.json --out ./splitted/
 ```
-___
-### Contacts
+___  
+### Web version  
+You can try to use web version [spritesheet-splitter](https://rocket-ua.github.io/spritesheet-splitter/)  
+Readme how to use on [github](https://github.com/rocket-ua/spritesheet-splitter#readme)  
+  
+### Contacts  
 Telegram [@rocket_ua](https://t.me/rocket_ua)
